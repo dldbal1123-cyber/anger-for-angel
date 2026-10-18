@@ -303,6 +303,16 @@ function getStageByScore(total){
   return EXAM_STAGES[4];
 }
 
+/* 'CASE A01' 표시: 산돌 격동고딕2로 뽑은 이미지(images/glyph/case-a01.png …)를 마스크로. 폭(px)은 이미지와 같게 */
+const ES_CASE_NO_W = { a01:113, a02:119, a03:120, a04:120, a05:120, b01:114, b02:120, b03:121, b04:121, b05:121 };
+function esCaseNoStyle(id){
+  const k = String(id).replace('CASE-', '').toLowerCase();
+  const w = ES_CASE_NO_W[k];
+  if(!w) return '';
+  const u = `url('images/glyph/case-${k}.png')`;
+  return ` style="width:${w}px;-webkit-mask-image:${u};mask-image:${u}"`;
+}
+
 function esImgKey(id){
   const k = id.replace('CASE-','').replace('-','').toLowerCase();
   return k.replace(/^([ab])0*(\d)$/, '$1$2');
@@ -352,7 +362,7 @@ function esHtml(s){
         </div>
         <div class="es-cs-divider"></div>
         <div class="es-cs-right">
-          <div class="es-cs-no">${c.id.replace('CASE-', 'CASE ')}</div>
+          <div class="es-cs-no"${esCaseNoStyle(c.id)}>${c.id.replace('CASE-', 'CASE ')}</div>
           <h3 class="es-cs-q">이 상황에서 어느 부분이 더 자신의 트리거에 가까운지 고르시오</h3>
           <p class="es-cs-guide">자신의 반응에 더 가까운 쪽을 선택하십시오.</p>
           <div class="es-cs-opts">${opts}</div>

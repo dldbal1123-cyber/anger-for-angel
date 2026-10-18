@@ -282,6 +282,14 @@ body{font-family:'DXTank',sans-serif;background:#000000}
 /* ── 카드 호버 반전 (펼쳐진 .is-active 카드에는 적용 안 함) ── */
 .sc-hover-bg{position:absolute;inset:0;background:#000000;opacity:0;transition:opacity .3s ease}
 .sc-num{transition:color .3s ease}
+/* 카드 숫자 01~05: 산돌 격동고딕2는 웹에 실을 수 없어 이 글꼴로 뽑은 이미지(images/glyph)를 글자 모양 틀(마스크)로 씀.
+   색은 글자색(currentColor)으로 칠하므로 호버 색 변경도 그대로. 어느 기기에서나 같은 모양. */
+.sc-num{font-size:0;height:109px;background-color:currentColor;-webkit-mask:no-repeat 0 0/100% 100%;mask:no-repeat 0 0/100% 100%}
+.stage-cards > .stage-card:nth-of-type(1) .sc-num{width:95px;-webkit-mask-image:url('images/glyph/num-01.png');mask-image:url('images/glyph/num-01.png')}
+.stage-cards > .stage-card:nth-of-type(2) .sc-num{width:117px;-webkit-mask-image:url('images/glyph/num-02.png');mask-image:url('images/glyph/num-02.png')}
+.stage-cards > .stage-card:nth-of-type(3) .sc-num{width:121px;-webkit-mask-image:url('images/glyph/num-03.png');mask-image:url('images/glyph/num-03.png')}
+.stage-cards > .stage-card:nth-of-type(4) .sc-num{width:123px;-webkit-mask-image:url('images/glyph/num-04.png');mask-image:url('images/glyph/num-04.png')}
+.stage-cards > .stage-card:nth-of-type(5) .sc-num{width:121px;-webkit-mask-image:url('images/glyph/num-05.png');mask-image:url('images/glyph/num-05.png')}
 .sc-name{transition:color .3s ease,-webkit-text-stroke-color .3s ease}
 .sc-tag{transition:color .3s ease,border-color .3s ease}
 .sc-go{transition:background-color .3s ease,color .3s ease}

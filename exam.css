@@ -377,6 +377,11 @@ body.es-bar-dark .topbar-logo img{filter:brightness(0)}
   min-height:95px;padding:16px 38px 16px 32px;border:1.5px solid #fff;width:100%;text-align:left;
 }
 #examSlides .es-cs-k{font-family:'Sandoll GyeokdongG2','SandollGyeokdongG2','산돌격동G2','Orbit',sans-serif;font-size:24px;font-weight:300;line-height:1}
+/* A·B와 CASE 번호도 산돌 격동고딕2 이미지 마스크로 (카드 숫자와 같은 방식, 색은 글자색) */
+#examSlides .es-cs-k{display:block;height:24px;font-size:0;background-color:currentColor;-webkit-mask:no-repeat 0 0/100% 100%;mask:no-repeat 0 0/100% 100%}
+#examSlides .es-cs-opt:nth-child(1) .es-cs-k{width:15px;-webkit-mask-image:url('images/glyph/key-a.png');mask-image:url('images/glyph/key-a.png')}
+#examSlides .es-cs-opt:nth-child(2) .es-cs-k{width:16px;-webkit-mask-image:url('images/glyph/key-b.png');mask-image:url('images/glyph/key-b.png')}
+#examSlides .es-cs-no[style*="mask-image"]{height:28px;font-size:0;background-color:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%}
 #examSlides .es-cs-text{font-family:'DXTank',sans-serif;font-size:24px;font-weight:700;letter-spacing:-.01em;line-height:1.8;word-break:keep-all;text-wrap:balance}   /* 두 줄 길이를 고르게 맞춰 '것'만 혼자 넘어가지 않게 */
 #examSlides .es-cs-tag{font-family:'Orbit',sans-serif;font-size:13px;font-weight:700;line-height:1.4;white-space:nowrap;padding-left:20px}
 #examSlides .es-cs-progress{margin-top:48px;display:flex;gap:6px}
