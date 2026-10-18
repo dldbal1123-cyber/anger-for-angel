@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# 작업용 원본·내보내기 폴더 (사이트에서 쓰지 않음)
+test_start_export/
+test_start_export2/
+spectrum_export/
+
+# 뽑아 둔 이미지 (사이트에서 쓰지 않음)
+처방전_png/
+발산단계_테스트_질문01.png
+외곽선_비교_질문36px.png
