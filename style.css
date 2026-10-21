@@ -31,6 +31,10 @@
   font-weight: 100 900;
   font-display: swap;
 }
+/* 한글은 단어 중간에서 줄바꿈하지 않고, 문단 마지막 줄에 한 단어만 남지 않게 */
+body{word-break:keep-all;overflow-wrap:break-word}
+p{text-wrap:pretty}
+
 /* 본문 폰트: Orbit Regular (전시용 오프라인 대응으로 로컬 파일 사용. 굵게는 이전 Google Fonts와 같이 브라우저가 만들어 냄) */
 @font-face {
   font-family: 'Orbit';

@@ -6,12 +6,12 @@
 
 /* ── 검사 데이터 ── */
 const questions = [
-  '화가 났을 때 나는 내 감정을 바로 알아차리기 어렵다.',
-  '나는 화가 나도 아무렇지 않은 척하는 편이다.',
-  '화가 쌓이면 두통, 답답함, 긴장 같은 몸의 반응이 먼저 온다.',
-  '나는 화가 나면 말이나 행동으로 표현하기 시작한다.',
-  '분노가 올라오면 목소리나 태도가 강해지는 편이다.',
-  '나는 화를 낸 뒤 후회하는 경우가 있다.'
+  '화가 났을 때 나는 내 감정을\n바로 알아차리기 어렵다.',
+  '나는 화가 나도\n아무렇지 않은 척하는 편이다.',
+  '화가 쌓이면 두통, 답답함, 긴장 같은\n몸의 반응이 먼저 온다.',
+  '나는 화가 나면\n말이나 행동으로 표현하기 시작한다.',
+  '분노가 올라오면\n목소리나 태도가 강해지는 편이다.',
+  '나는 화를 낸 뒤\n후회하는 경우가 있다.'
 ];
 
 const EXAM_STAGES = [
@@ -41,32 +41,32 @@ const TRIGGER_SET_A = [
   { id:'CASE-A01', subtitle:'나만 알기로 한 이야기',
     illustCaption:'INTERPERSONAL TRUST / PRIVATE RECORD',
     body:'너무 힘든 마음에 믿는 친구 한 명에게만 속마음을 털어놨다. 그런데 어느새 다른 사람들도 그 얘기를 알고 있다. 심지어 이야기는 부풀려져 있었다.',
-    a:{tag:'진심 무시형', text:'힘들어서 꺼낸 진심이 재밋거리 소문이 된 것'},
-    b:{tag:'침범/경계형', text:'나만 알기로 한 이야기가 허락 없이 퍼진 것'}
+    a:{tag:'진심 무시형', text:'힘들어서 꺼낸 진심이\n가십거리가 된 것'},
+    b:{tag:'침범/경계형', text:'나만 알기로 한 이야기가\n허락 없이 퍼진 것'}
   },
   { id:'CASE-A02', subtitle:'"좋아하는 일이잖아"',
     illustCaption:'PROFESSIONAL VALUE / LABOR DEPRECIATION',
     body:'몇 년 동안 갈고닦은 실력이다. 그런데 아는 사람이 말한다. "좋아하는 일이잖아, 친한 사이에 그냥 좀 해 주면 안 돼?"',
-    a:{tag:'진심 무시형', text:'내 노력을 "좋아서 하는 거잖아"로 가볍게 여기는 것'},
-    b:{tag:'불공정형', text:'친하다는 이유로 내 실력을 공짜로 쓰려는 것'}
+    a:{tag:'진심 무시형', text:'내 노력을 "좋아서 하는 거잖아"로\n가볍게 여기는 것'},
+    b:{tag:'불공정형', text:'친하다는 이유로\n내 실력을 공짜로 쓰려는 것'}
   },
   { id:'CASE-A03', subtitle:'"어쩌라고요?"',
     illustCaption:'PUBLIC ORDER / RULE VIOLATION',
     body:'모두가 함께 쓰는 공간에서 한 사람이 규칙을 무시하고 있다. 조심스럽게 한마디 했더니 "어쩌라고요?"가 돌아온다.',
-    a:{tag:'불공정형', text:'규칙은 무시하고 자기만 편하게 행동하는 것'},
-    b:{tag:'감정 억압형', text:'화가 나도 일이 커질까 봐 참아야 하는 것'}
+    a:{tag:'불공정형', text:'규칙은 무시하고\n자기만 편하게 행동하는 것'},
+    b:{tag:'감정 억압형', text:'화가 나도 일이 커질까 봐\n참아야 하는 것'}
   },
   { id:'CASE-A04', subtitle:'"다 너를 위해서 하는 말이야"',
     illustCaption:'IDENTITY CONTROL / AUTONOMY DENIAL',
     body:'오래 고민해서 진로를 정했다. 그런데 가족은 "다 너 잘되라고 하는 말이야"라며 계속 참견한다. 내 생각은 묻지 않고, 자기들이 원하는 쪽으로 바꾸라고만 한다.',
-    a:{tag:'침범/경계형', text:'내 선택인데 뜻대로 못 하고 계속 간섭받는 것'},
-    b:{tag:'고립/한계형', text:'내 선택을 이해해 주는 사람이 한 명도 없는 것'}
+    a:{tag:'침범/경계형', text:'내 선택인데 뜻대로 못 하고\n계속 간섭받는 것'},
+    b:{tag:'고립/한계형', text:'내 선택을 이해해 주는 사람이\n한 명도 없는 것'}
   },
   { id:'CASE-A05', subtitle:'아무 일 없다는 듯 웃는 사람',
     illustCaption:'PERPETRATOR IMAGE / EMOTIONAL LABOR',
     body:'나에게 큰 상처를 준 사람이 아무 일 없었다는 듯 웃으며 분위기를 맞춘다.',
-    a:{tag:'감정 억압형', text:'화가 안 풀렸는데 괜찮은 척해야 하는 것'},
-    b:{tag:'고립/한계형', text:'잘못한 사람은 멀쩡한데 나만 감정을 감당하는 것'}
+    a:{tag:'감정 억압형', text:'화가 안 풀렸는데\n괜찮은 척해야 하는 것'},
+    b:{tag:'고립/한계형', text:'잘못한 사람은 멀쩡한데\n나만 감정을 감당하는 것'}
   }
 ];
 
@@ -74,32 +74,32 @@ const TRIGGER_SET_B = [
   { id:'CASE-B01', subtitle:'"너 변했다?"',
     illustCaption:'GOODWILL EXPLOITATION / BOUNDARY EROSION',
     body:'처음엔 그냥 도와주고 싶어서 도와줬다. 그런데 상대는 그게 당연해졌고, 한 번 거절하자 "너 변했다?"라고 한다.',
-    a:{tag:'진심 무시형', text:'좋은 마음으로 한 일을 당연하게 여기는 것'},
-    b:{tag:'침범/경계형', text:'도와준다는 이유로 내 시간과 힘을 계속 가져가는 것'}
+    a:{tag:'진심 무시형', text:'좋은 마음으로 한 일을\n당연하게 여기는 것'},
+    b:{tag:'침범/경계형', text:'도와준다는 이유로\n내 시간과 힘을 계속 가져가는 것'}
   },
   { id:'CASE-B02', subtitle:'밤새 일한 사람은 따로 있는데',
     illustCaption:'CONTRIBUTION ERASURE / CREDIT THEFT',
     body:'같이 한 일인데 내가 대부분을 했다. 그런데 중간에 빠졌던 사람이 발표 날에만 나타나 공을 가져간다.',
-    a:{tag:'불공정형', text:'내가 한 일을 다른 사람이 인정받는 것'},
-    b:{tag:'감정 억압형', text:'뻔히 보이는데도 말 못 하고 웃고 있어야 하는 것'}
+    a:{tag:'불공정형', text:'내가 한 일을\n다른 사람이 인정받는 것'},
+    b:{tag:'감정 억압형', text:'뻔히 보이는데도 말 못 하고\n웃고 있어야 하는 것'}
   },
   { id:'CASE-B03', subtitle:'"뭘 그렇게 유난을 떨어요?"',
     illustCaption:'SPACE INVASION / REVERSED BLAME',
     body:'사람 많은 길에서 누군가 길을 막고 서 있다. "죄송한데 좀 지나갈게요"라고 했더니 "뭘 그렇게 유난을 떨어요?"라고 한다.',
-    a:{tag:'침범/경계형', text:'다른 사람은 생각 않고 길을 막고 서 있는 것'},
-    b:{tag:'불공정형', text:'잘못은 자기가 해놓고 나를 이상한 사람 취급하는 것'}
+    a:{tag:'침범/경계형', text:'다른 사람은 생각 않고\n길을 막고 서 있는 것'},
+    b:{tag:'불공정형', text:'잘못은 자기가 해 놓고\n나를 이상한 사람 취급하는 것'}
   },
   { id:'CASE-B04', subtitle:'조언인지 참견인지',
     illustCaption:'CHOICE DEPRECIATION / COLLECTIVE ISOLATION',
     body:'오래 고민해서 하나를 골랐는데, 친구는 "다 너 생각해서 하는 말이야"라며 계속 별로라고 한다.',
-    a:{tag:'진심 무시형', text:'내 고민은 모르고 선택을 대수롭지 않게 여기는 것'},
-    b:{tag:'고립/한계형', text:'내 선택을 존중해 주는 사람 없이 혼자 버티는 것'}
+    a:{tag:'진심 무시형', text:'내 고민은 모르고\n선택을 대수롭지 않게 여기는 것'},
+    b:{tag:'고립/한계형', text:'내 선택을 존중해 주는 사람 없이\n혼자 버티는 것'}
   },
   { id:'CASE-B05', subtitle:'"나는 몰랐는데?"',
     illustCaption:'RESPONSIBILITY SHIFT / EMOTIONAL SUPPRESSION',
     body:'갑자기 일이 터졌는데 한 명씩 "나는 몰랐는데?"라며 슬쩍 빠져나간다. 결국 만만한 나에게 일이 몰린다.',
-    a:{tag:'고립/한계형', text:'다 같이 할 일을 나 혼자 떠안게 된 것'},
-    b:{tag:'감정 억압형', text:'속으로는 화가 나는데 일부터 해결하려고 참는 것'}
+    a:{tag:'고립/한계형', text:'다 같이 할 일을\n나 혼자 떠안게 된 것'},
+    b:{tag:'감정 억압형', text:'속으로는 화가 나는데\n일부터 해결하려고 참는 것'}
   }
 ];
 
@@ -190,7 +190,7 @@ const RX_CONVERT = {
     tags:['추진력','멀리 뻗어나가는 힘','상승'],
     body:'<u>포효</u> 단계에서 관측된 에너지는<br>억제 시 침전, 방향 설정 시 <u>날개형</u>으로 전이된다.',
     actions:[
-      {name:'홧김 해지',desc:'안 쓰는 구독, 질질 끌던 약속,<br>미루던 탈퇴 지금 전부 끊는다.',quote:'붙잡고 있던 것들이 무게였다는 걸, 놓고 나서야 안다.'},
+      {name:'홧김 해지',desc:'안 쓰는 구독, 질질 끌던 약속,<br>미루던 탈퇴를 지금 전부 끊는다.',quote:'붙잡고 있던 것들이 무게였다는 걸, 놓고 나서야 안다.'},
       {name:'즉흥 예약',desc:'떠나버리고 싶다는 충동을 실제 티켓으로 바꾼다.<br>당일치기, 근교, 상관없다.',quote:'멀리 갈 필요 없다. 지금 떠난다는 사실이 중요하다.'},
       {name:'인맥 정리',desc:'연락 끊긴 지 오래된 단톡방,<br>굳이 안 봐도 되는 팔로우를 오늘 정리한다.',quote:'날개는 가벼워야 움직인다.'}
     ],
@@ -340,7 +340,7 @@ function esBg(kind, i){
 function esHtml(s){
   if(s.kind === 'q'){
     const i = s.i;
-    return `<div class="es-inner"><div class="es-qnum">QUESTION ${String(i+1).padStart(2,'0')} / ${String(questions.length).padStart(2,'0')}</div><h2 class="es-q">${questions[i]}</h2><div class="es-opts es-likert">${ES_LIKERT.map((l,v)=>`<button class="es-opt" onclick="esAnswer(${i},${v+1},this)"><span>${l}</span><small>${v+1}</small></button>`).join('')}</div></div>`;
+    return `<div class="es-inner"><div class="es-qnum">QUESTION ${String(i+1).padStart(2,'0')} / ${String(questions.length).padStart(2,'0')}</div><h2 class="es-q">${questions[i].replace(/\n/g, '<br>')}</h2><div class="es-opts es-likert">${ES_LIKERT.map((l,v)=>`<button class="es-opt" onclick="esAnswer(${i},${v+1},this)"><span>${l}</span><small>${v+1}</small></button>`).join('')}</div></div>`;
   }
   if(s.kind === 'stage') return `<div class="es-inner" id="esStageSlide"></div>`;
   if(s.kind === 'case'){
@@ -352,7 +352,7 @@ function esHtml(s){
       return im ? `<div class="es-cs-peek es-cs-peek-${side}" style="background-image:url('${im}')" aria-hidden="true"></div>` : '';
     };
     const segs = currentSet.map((_, k) => `<i class="${k < s.i ? 'is-done' : k === s.i ? 'is-cur' : ''}"></i>`).join('');
-    const opts = ['a', 'b'].map(k => `<button class="es-opt es-cs-opt" onclick="esPick(${s.i},'${k}',this)"><span class="es-cs-k">${k.toUpperCase()}</span><span class="es-cs-text">${c[k].text}</span><span class="es-cs-tag">${c[k].tag}</span></button>`).join('');
+    const opts = ['a', 'b'].map(k => `<button class="es-opt es-cs-opt" onclick="esPick(${s.i},'${k}',this)"><span class="es-cs-k">${k.toUpperCase()}</span><span class="es-cs-text">${c[k].text.replace(/\n/g, '<br>')}</span><span class="es-cs-tag">${c[k].tag}</span></button>`).join('');
     return `${peek(currentSet[s.i-1], 'l')}${peek(currentSet[s.i+1], 'r')}
       <div class="es-cs">
         <h2 class="es-cs-title">트리거 관찰 기록 <img src="Group%20106.svg" alt="" class="es-cs-icon"></h2>

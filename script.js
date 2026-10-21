@@ -40,7 +40,7 @@ const PAGE_BOTTOM_GAP = 50;
   if(!hero || !canvases.length) return;
 
   const PIXEL = 7;   // 픽셀 크기(px)
-  const FLIP_SLOW = 0.5;   // 영역 사이 전환(--flip)은 화면 높이 × 이 값만큼 더 스크롤해야 끝남 (클수록 천천히)
+  const FLIP_SLOW = 0.15;   // 영역 사이 전환(--flip)은 화면 높이 × 이 값만큼 더 스크롤해야 끝남 (클수록 천천히). 아래 제목·본문이 보이기 전에 끝나도록 0.15
 
   const layers = Array.from(canvases, canvas => ({
     canvas, ctx: canvas.getContext('2d'),
@@ -72,11 +72,14 @@ const PAGE_BOTTOM_GAP = 50;
     // 캔버스 상단이 화면 맨 아래에 닿을 때 0, 캔버스 높이(+ 영역 전환은 화면 높이 × slow)만큼 더 올라왔을 때 1
     const top = canvas.getBoundingClientRect().top;
     const progress = Math.min(Math.max((window.innerHeight - top) / (H + window.innerHeight * layer.slow), 0), 1);
+    // 영역 사이 전환(--flip)은 끝까지 진행되면 픽셀이 전부 채워져 다음 영역 색 한 가지로 끝남
+    // (예전엔 절반만 채워진 그라데이션 띠가 영역 사이에 계속 남아 경계가 애매해 보였음)
+    const limit = layer.slow ? 1 - progress * 2 : 1 - progress;
     ctx.clearRect(0, 0, W, H);
     ctx.fillStyle = layer.color;
     for(let r = 0; r < rows; r++){
       for(let c = 0; c < cols; c++){
-        if(cells[r * cols + c] > 1 - progress) ctx.fillRect(c * PIXEL, r * PIXEL, PIXEL, PIXEL);
+        if(cells[r * cols + c] > limit) ctx.fillRect(c * PIXEL, r * PIXEL, PIXEL, PIXEL);
       }
     }
   }
