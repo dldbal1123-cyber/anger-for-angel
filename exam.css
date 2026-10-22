@@ -166,6 +166,12 @@ body.es-immersive{ overflow:hidden; }
 .es-rx-flip.es-flipped .es-rx-flip-inner{ transform:rotateY(180deg); }
 .es-rx-card-face{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
 .es-rx-card-face-back{ transform:rotateY(180deg); }
+/* 구형 Mac 크롬·사파리처럼 backface-visibility가 제대로 안 먹는 환경 대비:
+   카드가 옆으로 선 순간(뒤집기 0.6초의 절반)에 앞·뒷면 표시를 직접 바꿈 */
+.es-rx-card-face-front{ visibility:visible; transition:visibility 0s linear .3s; }
+.es-rx-card-face-back{ visibility:hidden; transition:visibility 0s linear .3s; }
+.es-rx-flip.es-flipped .es-rx-card-face-front{ visibility:hidden; }
+.es-rx-flip.es-flipped .es-rx-card-face-back{ visibility:visible; }
 .es-rx-flip-hint{ flex:none; text-align:center; font-size:12px; font-weight:700; letter-spacing:.04em; opacity:.5; padding:2px 0 22px; font-family:'Orbit',sans-serif; }
 .es-rx-flip-hint span{ display:inline-block; margin:0 0 0 4px; }
 .es-rx-flip-hint-back{ padding:22px 0 2px; }
