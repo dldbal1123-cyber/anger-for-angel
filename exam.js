@@ -379,8 +379,12 @@ function esHtml(s){
   if(s.kind === 'rx') return `<div class="es-inner" id="esRxSlide"></div>`;
 }
 
+/* 질문 1~3번은 억압 쪽 문항(그렇다일수록 무음), 4~6번은 발산 쪽 문항(그렇다일수록 폭음).
+   억압 문항은 점수를 뒤집어(6 - 답) 모든 문항이 '높을수록 폭음'이 되게 맞춘 뒤 평균을 냄.
+   (예전엔 그대로 더해서 폭음·무음 성향 모두 평균 3점 → 가운데 '외침'으로 몰렸음) */
+const ES_REVERSED = [true, true, true, false, false, false];
 function esCalcStage(){
-  const sum = ES.answers.reduce((a,b) => a+b, 0);
+  const sum = ES.answers.reduce((a, v, i) => a + (ES_REVERSED[i] ? 6 - v : v), 0);
   ES.stage = getStageByScore(sum);
 }
 
