@@ -35,6 +35,13 @@
 body{word-break:keep-all;overflow-wrap:break-word}
 p{text-wrap:pretty}
 
+/* 오래된 사파리(15~17): 글자 외곽선이 글꼴 안쪽 윤곽까지 그려지거나 확대 시 어긋나 '밀려' 보임.
+   이 사파리에서만 외곽선을 글자 뒤로 보내 어긋남이 안 보이게 함 (크롬·최신 사파리는 그대로).
+   판별: 접두사 붙은 backdrop-filter만 있고 접두사 없는 건 없는 브라우저 = 사파리 17 이하 */
+@supports (-webkit-backdrop-filter:none) and (not (backdrop-filter:none)){
+  *{paint-order:stroke fill}
+}
+
 /* 본문 폰트: Orbit Regular (전시용 오프라인 대응으로 로컬 파일 사용. 굵게는 이전 Google Fonts와 같이 브라우저가 만들어 냄) */
 @font-face {
   font-family: 'Orbit';
