@@ -58,9 +58,11 @@ const PAGE_BOTTOM_GAP = 50;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     layer.cols = Math.ceil(layer.W / PIXEL); layer.rows = Math.ceil(layer.H / PIXEL);
     // 셀마다 고정 임계값: 위쪽일수록 먼저 나타나고, 랜덤 값으로 불규칙하게
+    // 영역 사이 전환(--flip)은 아래쪽부터 차오르게 (예전엔 CSS 180° 회전으로 뒤집었는데 오래된 사파리에서 안 뒤집혀 반대로 보였음)
+    const flip = canvas.classList.contains('pixel-dissolve--flip');
     layer.cells = new Float32Array(layer.cols * layer.rows);
     for(let r = 0; r < layer.rows; r++){
-      const fromTop = (r + 0.5) / layer.rows;
+      const fromTop = flip ? 1 - (r + 0.5) / layer.rows : (r + 0.5) / layer.rows;
       for(let c = 0; c < layer.cols; c++){
         layer.cells[r * layer.cols + c] = Math.random() - fromTop;
       }

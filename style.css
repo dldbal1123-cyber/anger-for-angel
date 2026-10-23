@@ -157,7 +157,7 @@ body{font-family:'DXTank',sans-serif;background:#000000}
 .pixel-dissolve{position:absolute;top:-90px;left:0;width:100%;height:100vh;z-index:1;pointer-events:none}
 /* 180도 뒤집은 버전(500px): 아래쪽부터 채워져 바로 아래 영역 색으로 이어짐.
    바닥을 다음 영역 시작점에 딱 붙임 (영역 경계 - 500) */
-.pixel-dissolve--flip{height:500px;transform:rotate(180deg)}
+.pixel-dissolve--flip{height:500px}   /* 아래쪽부터 차오르는 방향은 script.js에서 직접 그림 (CSS 회전 X) */
 .pd-to-blue{top:1657px;height:400px}   /* 블랙 → 파랑: 2057 - 400. 연구 기록 상자(페이지 2509px까지) 아래 검정 여백 약 230px 뒤에 시작 */
 .pd-to-black{top:3259px;height:400px}  /* 파랑 → 블랙: 2057 + 1602 - 400 (페이지 약 4339px). 위쪽 전환과 같은 400px */
 
