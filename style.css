@@ -123,6 +123,28 @@ body{font-family:'DXTank',sans-serif;background:#000000}
 .hero-stages{display:flex;flex-direction:column;gap:9.6px;margin-top:22.4px}
 .hero-stages-row{display:flex;gap:9.6px;justify-content:center}
 
+/* 첫 화면 '진단 시작' 버튼 (하늘색, 호버 시 반전) + 안내 한 줄 */
+.hero-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:8px}
+.hero-cta{
+  display:inline-flex;align-items:center;gap:22px;padding:18px 30px 18px 34px;
+  background:#28C8FF;color:#000000;border:2px solid #28C8FF;text-decoration:none;
+  font-family:'DXTank',sans-serif;font-size:26px;font-weight:700;letter-spacing:-.01em;line-height:1;
+  -webkit-text-stroke:.5px #28C8FF;
+  transition:background-color .2s ease,color .2s ease,-webkit-text-stroke-color .2s ease;
+}
+.hero-cta svg{width:28px;height:28px;flex:none}
+.hero-cta:hover{background:#000000;color:#28C8FF;-webkit-text-stroke-color:#000000}
+.hero-cta-sub{font-family:'Orbit',sans-serif;font-size:14px;letter-spacing:.04em;line-height:1.7;text-align:center;opacity:.7}
+
+/* 아무도 조작하지 않을 때 첫 화면 아래에서 깜빡이는 안내 (script.js의 ATTRACT_MS) */
+.hero-attract{
+  position:absolute;left:0;right:0;bottom:56px;z-index:2;margin:0;text-align:center;pointer-events:none;
+  font-family:'DXTank',sans-serif;font-size:22px;font-weight:700;color:#28C8FF;letter-spacing:.02em;
+  opacity:0;transition:opacity .6s ease;
+}
+.hero-attract.is-on{animation:heroAttract 1.6s ease-in-out infinite}
+@keyframes heroAttract{0%,100%{opacity:.25}50%{opacity:1}}
+
 .stage-btn{
   background:transparent;border:1.6px solid #ffffff;color:#ffffff;
   padding:7px 22.4px 9px;font-family:'DXTank',sans-serif;

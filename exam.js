@@ -749,12 +749,12 @@ addEventListener('touchend', e => {
 });
 
 /* 메인 "내 상태 확인하기" 버튼 → 검사 화면 열기 */
-document.querySelectorAll('.dg-btn').forEach(btn => {
+document.querySelectorAll('.dg-btn, .js-start-exam').forEach(btn => {   // 진단 영역 버튼·첫 화면 시작 버튼·상단 '분노 진단'
   btn.addEventListener('click', e => { e.preventDefault(); enterExamSlides(); });
 });
 
 /* 검사 중 메인 상단바(분해소·로고·연구소 안내 등)를 누르면 검사를 닫고 원래 동작대로 이동 */
-document.querySelectorAll('.topbar a').forEach(a => {
+document.querySelectorAll('.topbar a:not(.js-start-exam)').forEach(a => {   // '분노 진단'은 검사를 여는 버튼이라 제외
   a.addEventListener('click', () => {
     if(document.body.classList.contains('es-immersive')) exitExamSlides();
   });

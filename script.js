@@ -329,6 +329,28 @@ function renderRxContent(stage, stepNum){
   reset();
 })();
 
+/* ── 아무도 조작하지 않을 때 첫 화면에서 '진단해 보세요' 안내를 깜빡임 ──
+   첫 화면(맨 위)에 있고 검사 화면이 닫혀 있을 때만. 마우스·키·스크롤이 있으면 바로 숨김. */
+(function(){
+  const ATTRACT_MS = 8000;   // 이 시간 동안 조작이 없으면 안내 표시
+  const el = document.querySelector('.hero-attract');
+  if(!el) return;
+  let timer = null;
+  function show(){
+    if(window.scrollY > 50 || document.body.classList.contains('es-immersive')){ arm(); return; }
+    el.classList.add('is-on');
+  }
+  function arm(){
+    el.classList.remove('is-on');
+    clearTimeout(timer);
+    timer = setTimeout(show, ATTRACT_MS);
+  }
+  ['mousemove', 'mousedown', 'wheel', 'keydown', 'touchstart', 'scroll'].forEach(type => {
+    window.addEventListener(type, arm, { passive: true });
+  });
+  arm();
+})();
+
 /* ── 첫 화면 배경 커서 스포트라이트: 마스크 원 중심을 커서 위치로 ── */
 (function(){
   const hero = document.querySelector('.hero');
