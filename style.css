@@ -41,7 +41,7 @@ p{text-wrap:pretty}
    판별: 접두사 붙은 backdrop-filter만 있고 접두사 없는 건 없는 브라우저 = 사파리 17 이하 */
 @supports (-webkit-backdrop-filter:none) and (not (backdrop-filter:none)){
   *{-webkit-text-stroke-width:0 !important}
-  .slogan-text{-webkit-text-stroke-width:1px !important}
+  .slogan-text,.slogan-text *{-webkit-text-stroke-width:1px !important;-webkit-text-stroke-color:#ffffff !important}   /* 안쪽 감싼 글자(.px-text)까지 */
 }
 
 /* 본문 폰트: Orbit Regular (전시용 오프라인 대응으로 로컬 파일 사용. 굵게는 이전 Google Fonts와 같이 브라우저가 만들어 냄) */
