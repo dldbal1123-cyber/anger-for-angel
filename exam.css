@@ -277,7 +277,7 @@ body.es-immersive{ overflow:hidden; }
 #examSlides .es-cs-q{-webkit-text-stroke:.5px #000000}       /* 24px */
 /* A/B 선택지 답변(24px): 상자 바탕색 외곽선 0.6px로 획을 가늘게 (평소 검정 바탕 → 검정, 호버·선택 흰 바탕 → 흰색) */
 #examSlides .es-cs-text{-webkit-text-stroke:.6px #000000;transition:-webkit-text-stroke-color 160ms ease}
-#examSlides .es-opt.es-cs-opt.es-hit .es-cs-text{-webkit-text-stroke-color:#ffffff}
+#examSlides .es-opt.es-cs-opt.es-hit .es-cs-text{-webkit-text-stroke-color:#28C8FF}
 @media (hover:hover){ #examSlides .es-opt.es-cs-opt:hover .es-cs-text{-webkit-text-stroke-color:#ffffff} }
 /* '[ 00 단계 처방 ]': DX탱크전투 20px + 카드 바탕색(#EEEEEE) 외곽선 0.5px */
 #examSlides .es-rx-stagehead{font-family:'DXTank',sans-serif;font-size:20px;-webkit-text-stroke:.5px #EEEEEE}
@@ -459,7 +459,7 @@ body.es-bar-dark .topbar-logo img{filter:brightness(0)}
 /* 키워드 분석 결과 칩: 표시만 (누르기·호버 없음) */
 #examSlides .es-chip-static{display:inline-block;cursor:default;pointer-events:none}
 /* 고른 선택지 표시(흰 바탕)는 검정 채우기보다 우선 */
-#examSlides .es-opt.es-cs-opt.es-hit{background:#ffffff;color:#000000}
+#examSlides .es-opt.es-cs-opt.es-hit{background:#28C8FF;color:#000000;border-color:#28C8FF}   /* 고른 선택지: 호버(흰색)와 구분되게 하늘색 */
 
 /* 키워드 분석 문장: 검정 외곽선 1px + 행간 넓게 (135% → 160%) */
 #examSlides .es-sentence{-webkit-text-stroke:1px #000000;line-height:1.6}

@@ -666,7 +666,7 @@ function esFitCase(){
 addEventListener('resize', esFitCase);
 
 /* 트리거 관찰 기록 선택: 고른 쪽이 채워진 채 잠깐 멈춰 보여 주고(나머지는 흐리게) 다음으로 */
-const ES_CASE_HOLD = 800;   // 선택을 보여 주는 시간 (ms)
+const ES_CASE_HOLD = 1000;  // 선택을 보여 주는 시간 (ms)
 function esPick(i, opt, btn){
   const wrap = btn && btn.closest('.es-cs-opts');
   if(wrap && wrap.style.pointerEvents === 'none') return;   // 보여 주는 동안 중복 선택 막기
@@ -676,8 +676,13 @@ function esPick(i, opt, btn){
   wrap.querySelectorAll('.es-cs-opt').forEach(b => {
     b.classList.toggle('es-hit', b === btn);
     b.style.transition = 'opacity .25s ease, background-color 160ms ease, color 160ms ease';
-    b.style.opacity = b === btn ? '' : '.3';
+    b.style.opacity = b === btn ? '' : '.15';
   });
+  // 꾹 눌리는 느낌: 살짝 작아졌다가 돌아옴
+  if(btn.animate && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    btn.animate([{ transform: 'scale(1)' }, { transform: 'scale(.96)', offset: .35 }, { transform: 'scale(1.015)', offset: .7 }, { transform: 'scale(1)' }],
+                { duration: 380, easing: 'ease-out' });
+  }
   setTimeout(() => esGo(esCur+1), ES_CASE_HOLD);
 }
 /* 트리거 관찰 기록으로 (다시) 들어오면 흐리게·잠금 상태를 풀어 줌 (고른 표시는 유지) */
